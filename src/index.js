@@ -1,22 +1,15 @@
-import _ from 'lodash';
 import './style.css';
-import { capitalize, capitalizeFirstWord } from './components/helper.js';
+import { capitalize, capitalizeFirstWord } from './helper.js';
+import FetchWrapper from './fetch-wrapper';
 
-function component() {
-    const element = document.createElement('div');
-    const string = document.createElement('p');
-    const another = document.createElement('p');
-  
-    element.innerHTML = _.join(['Hello', 'webpack'], ' ');
-    element.classList.add('hello');
+console.log('it is working')
 
-    string.textContent = capitalize("this is a test string");
-    another.textContent = capitalizeFirstWord('this is another test');
+const weatherAPI = new FetchWrapper('http://api.weatherapi.com/v1');	
 
-    element.appendChild(string);
-    element.appendChild(another);
-  
-    return element;
-  }
-  
-  document.body.appendChild(component());
+
+weatherAPI.get('/current.json?key=db4ae2a50d4c48ca86c205041231511&q=96746')
+.then(data => {
+  console.log(data)
+})
+
+// create a zip input ${zip}
