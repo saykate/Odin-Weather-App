@@ -3,8 +3,9 @@ export default class FetchWrapper {
     this.baseURL = baseURL;
   }
 
-  get(endpoint) {
-      return fetch(this.baseURL + endpoint)
-          .then(response => response.json());
+  async get(endpoint) {
+    const response = await fetch(this.baseURL + endpoint)
+      const data = await response.json();
+      return data
   }
 }

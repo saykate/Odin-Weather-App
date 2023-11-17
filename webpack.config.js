@@ -1,5 +1,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const { DefinePlugin } = require('webpack');
+require('dotenv').config();
 
 module.exports = {
     mode: 'development',
@@ -7,6 +9,11 @@ module.exports = {
     plugins: [
       new HtmlWebpackPlugin({
         title: 'Output Management',
+        template: './src/index.html',
+        filename: 'index.html',
+      }),
+      new DefinePlugin ({
+        'process.env': JSON.stringify(process.env),
       })
     ],
     output: {
