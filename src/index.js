@@ -1,7 +1,8 @@
 import "./normalize.css";
 import "./style.css";
 import FetchWrapper from "./fetch-wrapper";
-import { renderWeather, clearDisplay } from "./render.js";
+import { renderWeather, clearDisplay } from "./display.js";
+import { toggleDegrees } from "./toggle.js";
 const zip = document.querySelector('#zip');
 const zipButton = document.querySelector('.zip-button');
 

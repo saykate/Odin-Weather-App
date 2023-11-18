@@ -10,7 +10,7 @@ const renderWeather = (fetchedData) => {
     conditions.classList.add('conditions');
 
     town.textContent = `The weather in ${fetchedData.location.name} is:`;
-    degrees.textContent = `${fetchedData.current.temp_f} degrees Farenheit`;
+    degrees.innerHTML = `<span class="deg">${fetchedData.current.temp_f}</span> degrees <span class="type">Farenheit</span>`;
     conditions.innerHTML = `${fetchedData.current.condition.text} <img src="${fetchedData.current.condition.icon}">`;
 
     display.appendChild(town);

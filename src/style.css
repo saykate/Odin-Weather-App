@@ -22,9 +22,16 @@
     background-color: var(--clr-lt-yellow);
 }
 
-.zip-button {
+.zip-button, .toggle-button {
     background-color: var(--clr-red);
     color: var(--clr-lt-green);
+    border: none;
+}
+
+.toggle {
+    text-align: center;
+    background-color: var(--clr-lt-green);
+    padding-bottom: 3rem;
 }
 
 .display {
@@ -36,6 +43,7 @@
     padding: 4rem;
     gap: 2rem;
     font-size: 1.5rem;
+    text-align: center;
 }
 
 .town {
@@ -51,13 +59,18 @@
 }
 
 
-
+@media (max-width: 700px) {
+    .input {
+        font-size: 1.25rem;
+    }
+}
 
 
 
 
 @media (max-width: 600px) {
     .input {
+        font-size: 1.5rem;
         flex-direction: column;
     }
     .town {
